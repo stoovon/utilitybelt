@@ -1,0 +1,5 @@
+# Ignore binaries
+compiled/
+utilitybelt
+.idea/
+vendor/
