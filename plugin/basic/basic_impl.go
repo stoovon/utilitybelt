@@ -58,6 +58,7 @@ func (g *BasicHello) listTodos() (*string, error) {
 
 	var todos []Todo
 
+	defer resp.Body.Close()
 	err = json.NewDecoder(resp.Body).Decode(&todos)
 	if err != nil {
 		return nil, err
@@ -89,6 +90,7 @@ func (g *BasicHello) getTodo(args []string) (*string, error) {
 
 	var todo Todo
 
+	defer resp.Body.Close()
 	err = json.NewDecoder(resp.Body).Decode(&todo)
 	if err != nil {
 		return nil, err
